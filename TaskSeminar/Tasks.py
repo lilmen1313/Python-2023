@@ -104,3 +104,48 @@
 #             if m < min:
 #                 min = m
 # print(f"MAX - {max}, MIN - {min}")
+
+#  17. Дан список чисел. Определите, сколько в нем встречается различных чисел.
+
+# n = int(input("Введите количество элементов в списке: "))
+# list_1 = list()
+# from random import randint
+
+# for i in range(n):
+#     list_1.append(randint(1, 5))
+# print(list_1)
+# new_list = []
+# for el in list_1:
+#     if el not in new_list:
+#         new_list.append(el)
+# print(f"Количество различных чисел равно {len(new_list)}")
+
+# 19. Дана последовательность из N целых чисел и число K. Необходимо сдвинуть всю последовательность 
+# (сдвиг - циклический) на K элементов вправо, K – положительное число.
+
+# n = int(input("Введите количество элементов в списке: "))
+# k = int(input("Введите число К: "))
+# list_1 = list()
+# from random import randint
+# for i in range(n):
+#     list_1.append(randint(1, 9))
+# print(list_1)
+# list_richt = list_1[len(list_1)-k:]
+# list_left = list_1[:n-k]
+# list_1 = list_richt + list_left
+# print(list_1)
+
+# 23. Дан массив, состоящий из целых чисел. Напишите программу, которая подсчитает количество 
+# элементов массива, больших предыдущего (элемента с предыдущим номером)
+
+# n = int(input("Введите количество элементов в списке: "))
+# list_1 = []
+# from random import randint
+# count = 0
+# for i in range(n):
+#     list_1.append(randint(-15, 15))
+#     if i > 0:
+#         if list_1[i-1] < list_1[i]:
+#             count += 1
+# print(list_1)
+# print(count)
