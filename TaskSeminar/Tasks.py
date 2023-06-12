@@ -149,3 +149,115 @@
 #             count += 1
 # print(list_1)
 # print(count)
+
+
+# Множетсва (set) - работают намного быстроее списков (List) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# import random
+# import time
+#
+# some_set = set()
+# for _ in range(10 ** 6):
+# some_set.add(random.randint(100, 1100))
+# some_list = list(some_set)
+#
+# start = time.perf_counter()
+# print(99 in some_list)
+# end = time.perf_counter()
+# first_duration = end - start
+#
+# start = time.perf_counter()
+# print(99 in some_set)
+# end = time.perf_counter()
+# second_duration = end - start
+# print(first_duration / second_duration)
+
+
+# Словари ('key':'value')
+# some_dict = {'яблоко': 'apple', 'виноград': 'grape', 'банан': 'ban'}
+# some_dict['банан'] = 'banana'
+# print(some_dict['виноград'])
+
+# for i in some_dict:
+#     print(i, some_dict[i])
+
+# for j in some_dict.values():
+#     print(j)
+
+# for i in sorted(some_dict):
+#     print(i, some_dict[i])
+
+# Задача 20: В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность. В случае с английским 
+# алфавитом очки распределяются так: 
+# ●A, E, I, O, U, L, N, S, T, R – 1 очко; 
+# ●D, G – 2 очка; 
+# ●B, C, M, P – 3 очка;
+# ●F, H, V, W, Y – 4 очка;
+# ●K – 5 очков; 
+# ●J, X – 8 очков; 
+# ●Q, Z – 10 очков. 
+
+# А русские буквы оцениваются так:
+# ●А, В, Е, И, Н, О, Р, С, Т – 1 очко; 
+# ●Д, К, Л, М, П, У – 2 очка; 
+# ●Б, Г, Ё, Ь, Я – 3 очка; 
+# ●Й, Ы – 4 очка; 
+# ●Ж, З, Х, Ц, Ч – 5 очков; 
+# ●Ш, Э, Ю – 8 очков; 
+# ●Ф, Щ, Ъ – 10 очков. 
+
+# Напишите программу, которая вычисляет стоимость введенного пользователем слова. 
+# Будем считать, что на вход подается только одно слово, которое содержит либо только английские, либо только русские буквы.
+
+# word = tuple(input("Введите слово: ").upper())
+# print(word)
+
+# count = 0
+# for i in word:
+#     if i in point1:
+#         count += 1
+#     elif i in point2:
+#         count += 2
+#     elif i in point3:
+#         count += 3
+#     elif i in point4:
+#         count += 4
+#     elif i in point5:
+#         count += 5
+#     elif i in point8:
+#         count += 8
+#     elif i in point10:
+#         count += 10
+# print(f"Количество очков = {count}")
+
+# word = input("Введите слово: ").upper()
+# dict_rus = {'А':1, 'В':1, 'Е':1, 'И':1, 'Н':1, 'О':1, 'Р':1, 'С':1, 'Т':1, 'Д':2, 'К':2, 'Л':2, 'М':2, 'П':2, 'У':2, 'Б':3, 'Г':3, 'Ё':3, 'Ь':3, 'Я':3, 'Й':4, 'Ы':4, 'Ж':5, 'З':5, 'Х':5, 'Ц':5, 'Ч':5, 'Ш':8, 'Э':8, 'Ю':8, 'Ф':10, 'Щ':10, 'Ъ':10}
+# count = 0
+# for i in word:
+#     count += dict_rus[i]
+# print(count)
+
+# Задача №25. Решение в группах Напишите программу, которая принимает на вход строку, и отслеживает, сколько раз каждый 
+# символ уже встречался. Количество повторов добавляется к символам с помощью постфикса формата _n. 
+# Input: a a a b c a a d c d d Output: a a_1 a_2 b c a_3 a_4 d c_1 d_1 d_2 
+# Для решения данной задачи используйте функцию .split()
+
+# import time
+# a = input("Введите предлеожение: ")
+
+# start = time.perf_counter()
+# a = list(a)
+# dict_new = {}
+# for i in a:
+#     if i == " ":
+#         a.remove(i)
+# for i in a: 
+#     if i not in dict_new:
+#         dict_new[i] = 1
+#     else:
+#         dict_new[i] += 1
+# for j in dict_new:
+#     print(f"{j} - {dict_new[j]}")
+# end = time.perf_counter()
+# result_time = end - start
+# print(result_time)
+
