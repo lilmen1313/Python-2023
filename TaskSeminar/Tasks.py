@@ -261,3 +261,31 @@
 # result_time = end - start
 # print(result_time)
 
+# Рекурсия
+
+# def fib(n):
+#     if n == 1:
+#         return 0
+#     if n == 2:
+#         return 1
+#     else:
+#         return fib(n-1) + fib(n-2)
+# print(fib(6))
+
+# Задача №33. Решение в группах Хакер Василий получил доступ к классному журналу и хочет заменить все свои минимальные 
+# оценки на максимальные. Напишите программу, которая заменяет оценки Василия, но наоборот: все максимальные – на минимальные. 
+# Input: 5 -> 1 3 3 3 4 
+# Output: 1 3 3 3 1
+
+# from random import randint
+
+# a = int(input("Введите оценок в классном журнале: "))
+# list_new = []
+# for _ in range(a):
+#     list_new.append(randint(1, 5))
+# print(list_new)
+# for i in range(a):
+#     if list_new[i] == min(list_new):
+#         list_new.insert(i, max(list_new))
+#         list_new.pop(i+1)
+# print(list_new)
