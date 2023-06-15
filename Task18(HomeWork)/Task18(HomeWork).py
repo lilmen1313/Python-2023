@@ -30,3 +30,16 @@ for j in range(0, n):
 
 result = list_1[new_list.index(min_diff)]
 print(f"Самый близкий по величине элемент к числу {x} --> {result}")
+
+# count = int(input('Кол-во: '))
+# some_set = set([int(input('Введите число: ')) for _ in range(count)])
+# x = int(input('Заданное число: '))
+# diff = 1
+# while True:
+# if x + diff in some_set:
+# print(x + diff)
+# break
+# if x - diff in some_set:
+# print(x - diff)
+# break
+# diff += 1
