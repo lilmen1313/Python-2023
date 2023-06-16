@@ -9,11 +9,20 @@
 # Input: 2 -> 3 4
 # Output: 4 3
 
-def reverseSequence(n):
-    if n > 0:
-        m = int(input("Введите число: "))
-        reverseSequence(n-1)
-        print(m, end=" ")
+# def reverseSequence(n):
+#     if n > 0:
+#         m = int(input("Введите число: "))
+#         reverseSequence(n-1)
+#         print(m, end=" ")
     
-n = int(input("Введите кол-во элементов в последовательности: "))
-reverseSequence(n)
+# n = int(input("Введите кол-во элементов в последовательности: "))
+# reverseSequence(n)
+
+def f(n):
+    if n == 0:
+        return ''
+    k = int(input())
+    return f(n - 1) + f' {k}'
+
+n = int(input())
+print(f(n))
