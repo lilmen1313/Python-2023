@@ -289,3 +289,79 @@
 #         list_new.insert(i, max(list_new))
 #         list_new.pop(i+1)
 # print(list_new)
+
+# Задача 26:  Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B 
+# с помощью рекурсии
+
+# def exponentiation(a, b):
+#     if b == 0:
+#         return 1
+#     return a * exponentiation(a, b-1)
+
+# a = int(input("Введите число А: "))
+# b = int(input("Введите число В: "))
+# print(exponentiation(a, b))
+
+# Задача 28: Напишите рекурсивную функцию sum(a, b), возвращающую сумму двух целых неотрицательных чисел. 
+# Из всех арифметических операций допускаются только +1 и -1. Также нельзя использовать циклы.
+
+# def sum(a, b):
+#     if a == 0:
+#         return b
+#     return sum(a - 1, b +1 )
+
+# a = int(input("Введите число А: "))
+# b = int(input("Введите число В: "))
+# print(sum(a, b))
+
+# Задача №41. Решение в группах Дан массив, состоящий из целых чисел. Напишите программу, которая в данном массиве 
+# определит количество элементов, у которых два соседних и, при этом, оба соседних элемента меньше данного. 
+# Сначала вводится число N — количество элементов в массиве  Далее записаны N чисел — элементы массива. 
+# Массив состоит из целых чисел.  (каждое число вводится с новой строки)
+
+# from random import randint
+# n = int(input("Введите кол-во элементов в списке: "))
+
+# list_new = []
+
+# for _ in range(n):
+#     # list_new.append(randint(1, 20))
+#     list_new.append(int(input("Введите элемент: ")))
+# print(list_new)
+
+# count = 0
+# for i in range(1, n):
+#     if list_new[i-1] < list_new[i] and list_new[i+1] < list_new[i]:
+#         count +=1
+# print(count)
+
+# Задача №45. Решение в группах Два различных натуральных числа n и m называются дружественными, если сумма 
+# делителей числа n (включая 1, но исключая само n) равна числу m и наоборот. Например, 220 и 284 – дружественные числа. 
+# По данному числу k выведите все пары дружественных чисел, каждое из которых не превосходит k. 
+# Программа получает на вход одно натуральное число k, не превосходящее 105. 
+# Программа должна вывести  все пары дружественных чисел, каждое из которых не превосходит k. 
+# Пары необходимо выводить по одной в строке, разделяя пробелами. Каждая пара должна быть выведена только один раз 
+# (перестановка чисел новую пару не дает).
+
+k = 1500 #int(input("Введите k: ")) 
+list_k = [i for i in range(3, k+1)] 
+print(list_k) 
+
+printed_numbers = set()
+
+sum_of_divisors = [] 
+for i in range(len(list_k)): 
+    sum_div = 1 
+    for div in range(2, list_k[i]): 
+        if list_k[i] % div == 0: 
+            sum_div += div 
+    sum_of_divisors.append(sum_div) 
+print(sum_of_divisors) 
+ 
+for y in range(len(sum_of_divisors)): 
+    for h in range(len(list_k)): 
+        if sum_of_divisors[y] == list_k[h] and sum_of_divisors[h] == list_k[y] and y != h:
+            if list_k[h] not in printed_numbers and list_k[y] not in printed_numbers:
+                print(list_k[h], list_k[y])
+                printed_numbers.add(list_k[h])
+                printed_numbers.add(list_k[y])
