@@ -343,25 +343,151 @@
 # Пары необходимо выводить по одной в строке, разделяя пробелами. Каждая пара должна быть выведена только один раз 
 # (перестановка чисел новую пару не дает).
 
-k = 1500 #int(input("Введите k: ")) 
-list_k = [i for i in range(3, k+1)] 
-print(list_k) 
+# k = 1500 #int(input("Введите k: ")) 
+# list_k = [i for i in range(3, k+1)] 
+# print(list_k) 
 
-printed_numbers = set()
+# printed_numbers = set()
 
-sum_of_divisors = [] 
-for i in range(len(list_k)): 
-    sum_div = 1 
-    for div in range(2, list_k[i]): 
-        if list_k[i] % div == 0: 
-            sum_div += div 
-    sum_of_divisors.append(sum_div) 
-print(sum_of_divisors) 
+# sum_of_divisors = [] 
+# for i in range(len(list_k)): 
+#     sum_div = 1 
+#     for div in range(2, list_k[i]): 
+#         if list_k[i] % div == 0: 
+#             sum_div += div 
+#     sum_of_divisors.append(sum_div) 
+# print(sum_of_divisors) 
  
-for y in range(len(sum_of_divisors)): 
-    for h in range(len(list_k)): 
-        if sum_of_divisors[y] == list_k[h] and sum_of_divisors[h] == list_k[y] and y != h:
-            if list_k[h] not in printed_numbers and list_k[y] not in printed_numbers:
-                print(list_k[h], list_k[y])
-                printed_numbers.add(list_k[h])
-                printed_numbers.add(list_k[y])
+# for y in range(len(sum_of_divisors)): 
+#     for h in range(len(list_k)): 
+#         if sum_of_divisors[y] == list_k[h] and sum_of_divisors[h] == list_k[y] and y != h:
+#             if list_k[h] not in printed_numbers and list_k[y] not in printed_numbers:
+#                 print(list_k[h], list_k[y])
+#                 printed_numbers.add(list_k[h])
+#                 printed_numbers.add(list_k[y])
+
+# Функции высшего порядка 
+
+# def sq1(x):
+# print(x ** 2)
+#
+#
+# print(sq1(10))
+#
+# def sq2(x):
+# return x ** 2
+#
+#
+# print(sq2(20))
+
+# def c(x):
+# return x ** 3
+#
+#
+# some_list = [1, 2, 3, 4, 5]
+#
+# new_list = []
+#
+# for el in some_list:
+# new_list.append(c(el))
+#
+# print(new_list)
+
+# def c(x):
+#     return x ** 3
+
+# some_list = [1, 2, 3, 4, 5]
+# new_list = list(map(lambda x: x ** 2 if x % 2 == 0 else x ** 3, some_list))
+# print(new_list)
+
+# def even(a):
+#     return a % 2 == 0
+
+
+# some_list = [1, 2, 3, 4, 5]
+
+# new_list = list(filter(lambda a: a % 2 == 0, some_list))
+# print(new_list)
+
+# import random
+#
+# some_list = []
+# for _ in range(100): # 0, 1, 2, 3, 4, 5, 6, 7... 99
+# number = random.randint(1, 10)
+# if number % 2 == 0:
+# some_list.append(number)
+#
+#
+# some_list = [random.randint(1, 10) for _ in range(100)]
+#
+# some_list = [int(input()) for _ in range(int(input()))]
+
+# Задача №47. Решение в группах У вас есть код, который вы не можете менять (так часто бывает, когда код в 
+# глубине программы используется множество раз и вы не хотите ничего сломать): 
+# transformation = <???>
+# values = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29] # или любой другой список 
+# transormed_values = list(map(transformation, values)) 
+# Единственный способ вашего взаимодействия с этим кодом - посредством задания функции transformation. 
+# Однако вы поняли, что для вашей текущей задачи вам не нужно никак преобразовывать список значений, 
+# а нужно получить его как есть. Напишите такое лямбда-выражение transformation, чтобы transformed_values получился копией values.
+
+# values = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+# transformation = lambda i: i
+# transormed_values = list(map(transformation, values))
+# print(values)
+# print(transormed_values)
+
+
+# Задача №49. Решение в группах Планеты вращаются вокруг звезд по эллиптическим орбитам. Назовем самой далекой планетой ту, 
+# орбита которой имеет самую большую площадь. Напишите функцию find_farthest_orbit(list_of_orbits), которая среди списка орбит 
+# планет найдет ту, по которой вращается самая далекая планета. Круговые орбиты не учитывайте: вы знаете, что у вашей звезды 
+# таких планет нет, зато искусственные спутники были были запущены на круговые орбиты. Результатом функции должен быть кортеж, 
+# содержащий длины полуосей эллипса орбиты самой далекой планеты. Каждая орбита представляет из себя кортеж из пары чисел - 
+# полуосей ее эллипса. Площадь эллипса вычисляется по формуле S = pi*a*b, где a и b - длины полуосей эллипса. 
+# При решении задачи используйте списочные выражения. Подсказка: проще всего будет найти эллипс в два шага: 
+# сначала вычислить самую большую площадь эллипса, а затем найти и сам эллипс, имеющий такую  площадь. Гарантируется, 
+# что самая далекая планета ровно одна
+
+# def CreateTupleFloat(size ,min_value, max_value):
+#     import random
+#     return tuple([round(random.random()*(max_value - min_value) + min_value, 2) for _ in range(size)])
+
+# def find_farthest_orbit(list_of_orbits):
+#     import math
+#     list_1 = []
+#     for el in list_of_orbits:
+#         if el[0] != el[1]:
+#             list_1.append(el[0] * el[1] * math.pi)
+#         else:
+#             list_1.append(0)
+#     print(list_1)
+#     return list_of_orbits[list_1.index(max(list_1))]
+
+# siz = int(input("Введите кол-во планет: "))
+# orbits = [CreateTupleFloat(2, 5, 20) for _ in range(siz)]
+# orbits = [(1, 3), (2, 2), (1.5, 2), (6, 6), (12, 78)]
+# print(orbits)
+# print(find_farthest_orbit(orbits))
+
+# Задача №51. Напишите функцию same_by(characteristic, objects), которая проверяет, все ли объекты имеют 
+# одинаковое значение некоторой характеристики, и возвращают True, если это так. Если значение характеристики для разных
+# объектов отличается - то False. Для пустого набора объектов, функция должна возвращать True. 
+# Аргумент characteristic - это функция, которая принимает объект и вычисляет его характеристику.
+
+# def CreateListRnd(size ,min_value, max_value):
+#     from random import randint
+#     return [randint(min_value, max_value) for i in range(size)]
+
+# def same_by(characteristic, objects):
+#     new_objects = list(filter(characteristic, objects))
+#     if len(objects) == len(new_objects) or len(new_objects) == 0: 
+#         return True
+#     return False
+
+# # values = CreateListRnd(5, 2, 16)
+# values = [2, 4, 8, 88, 6]
+# print(values)
+# if same_by(lambda x: x % 2, values):
+#     print('same')
+# else:
+#     print('different')
