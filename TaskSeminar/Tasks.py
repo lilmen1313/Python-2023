@@ -491,3 +491,77 @@
 #     print('same')
 # else:
 #     print('different')
+
+# Урок 8. Работа с файлами
+
+# with open("C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/test.txt", 'r', encoding='UTF-8') as file:
+    # text = file.read()
+    # print(text)
+    # for el in text:
+    #     print(el)
+
+    # while True:
+    #     line = file.readline()
+    #     if not line:
+    #         break
+    #     print(line[:-1])
+    
+    # text = file.read().splitlines()
+    # print(text)
+
+# with open("C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/test.txt", 'w', encoding='UTF-8') as file:
+#     some_list = ['учился в универе', 'жить хорошо', 'Краснодар']
+#     for el in some_list:
+#         file.write(el + '\n')
+
+# with open("C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/test.txt", 'a', encoding='UTF-8') as file:
+#     some_list = ['учился в универе', 'жить хорошо', 'Краснодар']
+#     for el in some_list:
+#         file.write(el + '\n')
+
+# Дан файл с несколькими строчками, пользователь вводит в консоль символ, нужно найти количество
+# повторов этого символа во всем файле.
+
+# a = input("Введите символ: ")
+# with open("C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/test.txt", 'r', encoding='UTF-8') as file:
+#     f = file.read()
+#     print(f)
+#     # count = 0
+#     # for i in f:
+#     #     if a in i:
+#     #         count += 1
+#     print(f.count(a))
+# # print(count)
+ 
+# Дан файл следующего формата:
+# Фамилия ученика: список оценок через запятую
+# Сальников: 5, 5, 2, 3, 5, 5
+# Нужно записать в новый файл фамилию ученика и его средний балл через :
+# Сальников: 3.5
+
+# with open("C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/классный_журнал.txt", 'r', encoding='UTF-8') as file:
+#     result = list()
+#     while True:
+#         line = file.readline().split()
+#         line1 = list(map(lambda el: int(el[:1]), line[1:]))
+#         if line1 != []:
+#             gpa1 = round(sum(line1) / len(line1), 2)
+#             result.append(f"{line[0]} {gpa1}\n")
+#         if not line:
+#             break
+# with open("C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/GPA.txt", 'a', encoding='UTF-8') as file:
+#     for el in result:
+#         file.write(el)
+
+# Дан файл, нужно полностью скопировать его в другой файл
+
+# with open("C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/GPA.txt", 'r', encoding='UTF-8') as file:
+#     line = file.read()
+# with open("C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/GPA_copy.txt", 'a', encoding='UTF-8') as file:
+#     file.write(line)
+
+# import shutil
+# f1 = "C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/GPA.txt"
+# f2 = "C:/Users/lilme/Desktop/TESTING(Seminar)/1. Знакомство с языком Python (семинары)/TaskSeminar/GPA_copy2.txt"
+# shutil.copy2(f1, f2)
+
